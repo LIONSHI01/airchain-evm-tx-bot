@@ -7,7 +7,14 @@ const VPS_IP = process.env.VPS_IP;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const FROM = process.env.FROM;
 const TO = process.env.TO;
-console.log(VPS_IP);
+const INTERVAL = process.env.INTERVAL;
+
+if (VPS_IP && PRIVATE_KEY && FROM && INTERVAL) {
+  console.log("*** Environment Vars Ready. ***");
+} else {
+  throw new Error("Please check .env file");
+}
+
 // 替换为你的节点URL
 const providerUrl = `http://${VPS_IP}:8545`;
 
@@ -55,4 +62,4 @@ async function signAndSendTransaction() {
 }
 
 // 每6秒执行一次交易
-setInterval(signAndSendTransaction, 6000);
+setInterval(signAndSendTransaction, INTERVAL);
