@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3"
 
 services:
   node-app:
@@ -10,3 +10,4 @@ services:
     environment:
       NODE_ENV: development
         - .env
+    command: /bin/sh -c "yarn && yarn start"
