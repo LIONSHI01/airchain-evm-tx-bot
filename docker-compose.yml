@@ -6,7 +6,7 @@ services:
     volumes:
       - .:/usr/src/app
     ports:
-      - "${PORT:-3000}:3000"
+      - "${PORT:-31111}:31111"
     environment:
       NODE_ENV: development
         - .env
