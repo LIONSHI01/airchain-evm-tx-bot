@@ -2,6 +2,7 @@ version: "3"
 
 services:
   node-app:
+    container_name: airchain_evm_tx_bot
     build: .
     volumes:
       - .:/usr/src/app
